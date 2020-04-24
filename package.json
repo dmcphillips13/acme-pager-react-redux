@@ -36,9 +36,12 @@
     "@babel/core": "^7.7.2",
     "@babel/preset-env": "^7.7.1",
     "@babel/preset-react": "^7.7.0",
+    "axios": "^0.19.2",
     "babel-loader": "^8.0.6",
     "faker": "^4.1.0",
     "nodemon": "^1.19.4",
+    "react-redux": "^7.2.0",
+    "redux-thunk": "^2.3.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   }
