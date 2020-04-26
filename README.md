@@ -21,7 +21,9 @@ To build and start the server `npm run start:dev`
 
 ## Stretch Goals
 
-Write some tests!  
-Add a delete button for each employee  
+Write some tests!
+
+<!-- Add a delete button for each employee   -->
+
 Add a new tab where you can create an employee  
 Add an update button to each employee that allows you to change their information
