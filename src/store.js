@@ -10,18 +10,18 @@ const LOAD_EMPLOYEES = "LOAD_EMPLOYEES";
 const _loadEmployees = (employees) => ({ type: LOAD_EMPLOYEES, employees });
 
 //THUNKS
-const loadEmployees = () => {
+const loadEmployees = (page) => {
   return async (dispatch) => {
-    const response = (await axios.get("/api/employees/")).data;
+    const response = (await axios.get(`/api/employees/${page}`)).data;
     dispatch(_loadEmployees(response));
   };
 };
 
 //REDUCERS
-const employeesReducer = (state = [], action) => {
+const employeesReducer = (state = {}, action) => {
   switch (action.type) {
     case LOAD_EMPLOYEES: {
-      state = action.employees.rows;
+      state = action.employees;
       return state;
     }
 

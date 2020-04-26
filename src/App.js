@@ -1,34 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { HashRouter, Route } from "react-router-dom";
-import { loadEmployees } from "./store";
 import Employees from "./Employees";
+import Nav from "./Nav";
 
-class App extends Component {
-  constructor() {
-    super();
-  }
-
-  componentDidMount() {
-    this.props.load();
-  }
-
-  render() {
-    return (
-      <HashRouter>
-        <h1>Hello World</h1>
-        <Route component={Employees} />
-      </HashRouter>
-    );
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    load: () => {
-      dispatch(loadEmployees());
-    },
-  };
+const App = () => {
+  return (
+    <HashRouter>
+      <h1>Acme Pager</h1>
+      <Route component={Nav} />
+      <Route path="/:page?" component={Employees} />
+    </HashRouter>
+  );
 };
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(null)(App);
